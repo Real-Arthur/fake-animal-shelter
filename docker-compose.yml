@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: shelter-backend
+    depends_on: 
+      - postgres
+    ports:
+      - "5000:5000"
+    networks: 
+      - default
+    
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: shelter-frontend
+    stdin_open: true
+    networks: 
+      - default
+    
+  postgres:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    image: postgres
+    container_name: shelter-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment: 
+      POSTGRES_USER: animal_shelter
+      POSTGRES_PASSWORD: animal_shelter
+      POSTGRES_DB: animal_shelter
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    networks: 
+      - default
+
+volumes:
+  data:
+networks: 
+  default:
