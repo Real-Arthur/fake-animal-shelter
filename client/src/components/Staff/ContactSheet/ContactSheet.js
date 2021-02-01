@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
+import ContactSheetItems from './ContactSheetItems';
 
 function ContactSheet(props) {
-  const [heading, setHeading] = useState('Contact Sheet');
   useEffect(() => {
     props.dispatch({
       type: 'FETCH_CONTACTS'
@@ -13,11 +13,12 @@ function ContactSheet(props) {
 
   return (
     <Container>
-      <ul>
         {props.store.contactsReducer.map((contact, i) =>
-        <li key={i}>{contact.first_name} {contact.last_name}</li>
+        <ContactSheetItems
+        key={i}
+        contact={contact}
+        />
         )}
-      </ul>
     </Container>
   );
 }
