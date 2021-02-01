@@ -18,11 +18,11 @@ router.post('/', (req, res) => {
   pool.query(queryString, [firstName, lastName, email, dob, address, occupation, typeOfHome, interestedIn])
   .then(response => {
     console.log('response', response);
-    res.send(200);
+    res.sendStatus(200);
   })
   .catch(error => {
     console.log('error in interested.router.js POST', error);
-    res.send(500);
+    res.sendStatus(500);
   });
 });
 module.exports = router;

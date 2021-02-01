@@ -25,6 +25,7 @@ class Register extends Component {
   };
   // check for blank form fields
   // submit button is disabled until all fields are filled
+  /*
   confirmedInputs =
     this.firstName !== '' &&
     this.lastName !== '' &&
@@ -33,6 +34,7 @@ class Register extends Component {
     this.address !== '' &&
     this.occupation !== '' &&
     this.typeOfHome !== '';
+    */
   // Alert Validation
   // User can go home, edit info, or submit info
   confirmAdoptionInterest = () => {
@@ -101,6 +103,9 @@ class Register extends Component {
     });
   };
   render() {
+    console.log('state', this.state);
+    console.log('confirmed', this.confirmedInputs);
+    
     return (
       <Container className='form' maxWidth='xs'>
         {/* <Grid container direction='column' justify='flex-start' alignItems='center'> */}
@@ -182,7 +187,7 @@ class Register extends Component {
                   onChange={this.handleInputChangeFor('typeOfHome')}
                 />
             </InputLabel>
-            <Button variant='contained' color='primary' disabled={this.confirmedInputs} onClick={this.confirmAdoptionInterest}>
+            <Button variant='contained' color='primary' onClick={this.confirmAdoptionInterest}>
               Submit Registration
             </Button>
         {/* </Grid> */}

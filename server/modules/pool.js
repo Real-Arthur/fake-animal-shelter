@@ -12,8 +12,8 @@ let config = {};
 
   const params = url.parse('postgres://animal_shelter:animal_shelter@postgres:5432/animal_shelter');
   const auth = params.auth.split(':');
-  console.log('params', params);
-  console.log('auth', auth);
+  // console.log('params', params);
+  // console.log('auth', auth);
   
   config = {
     user: auth[0],
@@ -25,7 +25,6 @@ let config = {};
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
   };
-  console.log('config', config);
   
 
 // this creates the pool that will be shared by all other modules

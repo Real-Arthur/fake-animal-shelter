@@ -1,4 +1,4 @@
-./server/package-lock.json
-./client/node_modules
-./client/package-lock.json
-./data
+server/package-lock.json
+client/node_modules
+client/package-lock.json
+data

@@ -10,41 +10,42 @@ CREATE TYPE sex AS ENUM ('Male', 'Female', 'Unknown');
 
 -- We can create our user table
 CREATE TABLE "user" (
-  id SERIAL PRIMARY KEY,
-  username VARCHAR,
-  password VARCHAR
+  "id" SERIAL PRIMARY KEY,
+  "username" VARCHAR,
+  "password" VARCHAR
 );
 -- We can create our post table
 CREATE TABLE "animals" (
-  id SERIAL PRIMARY KEY,
-  image VARCHAR,
-  name VARCHAR NOT NULL,
-	animal_type animal_type NOT NULL,
-	breed VARCHAR,
-	color VARCHAR,
-	coat_length VARCHAR,
-	age VARCHAR,
-	sex sex,
-	size size,
-	house_trained BOOLEAN,
-	vaccinated BOOLEAN,
-	neutered BOOLEAN,
-	personality VARCHAR,
-	price INT,
-	picture VARCHAR,
-	adopted BOOLEAN DEFAULT false
+  "id" SERIAL PRIMARY KEY,
+  "image" VARCHAR,
+  "name" VARCHAR NOT NULL,
+	"animal_type" animal_type NOT NULL,
+	"breed" VARCHAR,
+	"color" VARCHAR,
+	"coat_length" VARCHAR,
+	"age" VARCHAR,
+	"sex" sex,
+	"size" size,
+	"house_trained" BOOLEAN,
+	"vaccinated" BOOLEAN,
+	"neutered" BOOLEAN,
+	"personality" VARCHAR,
+	"price" INT,
+	"picture" VARCHAR,
+	"adopted" BOOLEAN DEFAULT false
 );
 CREATE TABLE "people" (
-	id SERIAL PRIMARY KEY,
-	first_name VARCHAR NOT NULL,
-	last_name VARCHAR NOT NULL,
-	email VARCHAR NOT NULL,
-	password VARCHAR NOT NULL,
-	date_of_birth DATE NOT NULL,
-	address VARCHAR NOT NULL,
-	occupation VARCHAR,
-	type_of_home VARCHAR,
-	contacted BOOLEAN DEFAULT false
+	"id" SERIAL PRIMARY KEY,
+	"first_name" VARCHAR NOT NULL,
+	"last_name" VARCHAR NOT NULL,
+	"email" VARCHAR NOT NULL,
+	"date_of_birth" DATE NOT NULL,
+	"address" VARCHAR NOT NULL,
+	"occupation" VARCHAR,
+	"type_of_home" VARCHAR,
+	"interested_in" INT REFERENCES animals,
+	"contacted" BOOLEAN DEFAULT false,
+	"adoption_success" BOOLEAN DEFAULT false
 );
 
 INSERT INTO "animals" ("name", "animal_type", "breed", "color", "coat_length", "age", "sex", "size", "house_trained", "vaccinated", "neutered", "personality", "price", "picture")
