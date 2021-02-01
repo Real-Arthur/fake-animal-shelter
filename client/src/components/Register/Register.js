@@ -17,6 +17,7 @@ class Register extends Component {
     firstName: '',
     lastName: '',
     email: '',
+    phoneNumber: '',
     dob: '',
     address: '',
     occupation: '',
@@ -89,6 +90,7 @@ class Register extends Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
+        phoneNumber: this.state.phoneNumber,
         dob: this.state.dob,
         address: this.state.address,
         occupation: this.state.occupation,
@@ -141,6 +143,17 @@ class Register extends Component {
                   required
                   fullWidth
                   onChange={this.handleInputChangeFor('email')}
+                />
+            </InputLabel>
+            <InputLabel className='form-spacing' htmlFor='phoneNumber'>
+              Email:
+                <TextField
+                  type='text'
+                  name='phoneNumber'
+                  value={this.state.phoneNumber}
+                  required
+                  fullWidth
+                  onChange={this.handleInputChangeFor('phoneNumber')}
                 />
             </InputLabel>
             <InputLabel className='form-spacing' htmlFor='dob'>

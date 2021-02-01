@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
-
+// provides staff with list of people to contact
 router.get('/', (req, res) => {
   console.log('contacts get');
-  
   const queryString = 
     `SELECT 
       "people"."first_name", 
       "people"."last_name", 
-      "people"."email", 
+      "people"."email",
+      "people"."phone_number",
       "people"."adoption_success", 
       "people"."contacted", 
       "animals"."name", 

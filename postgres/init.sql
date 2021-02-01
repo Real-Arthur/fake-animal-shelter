@@ -39,11 +39,13 @@ CREATE TABLE "people" (
 	"first_name" VARCHAR NOT NULL,
 	"last_name" VARCHAR NOT NULL,
 	"email" VARCHAR NOT NULL,
+	"phone_number" VARCHAR NOT NULL,
 	"date_of_birth" DATE NOT NULL,
 	"address" VARCHAR NOT NULL,
 	"occupation" VARCHAR,
 	"type_of_home" VARCHAR,
 	"interested_in" INT REFERENCES animals,
+	"interested_on" TIMESTAMP, 
 	"contacted" BOOLEAN DEFAULT false,
 	"adoption_success" BOOLEAN DEFAULT false
 );

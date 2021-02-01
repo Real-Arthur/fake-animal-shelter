@@ -7,15 +7,16 @@ router.post('/', (req, res) => {
   let firstName = req.body.firstName;
   let lastName = req.body.lastName;
   let email = req.body.email;
+  let phoneNumber = req.body.phoneNumber;
   let dob = req.body.dob;
   let address = req.body.address;
   let occupation = req.body.occupation;
   let typeOfHome = req.body.typeOfHome;
   let interestedIn = req.body.interestedIn;
-  const queryString = `INSERT INTO "people" ("first_name", "last_name", "email", "date_of_birth", "address", "occupation", "type_of_home", "interested_in")
+  const queryString = `INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in")
   VALUES
-  ($1, $2, $3, $4, $5, $6, $7, $8);`;
-  pool.query(queryString, [firstName, lastName, email, dob, address, occupation, typeOfHome, interestedIn])
+  ($1, $2, $3, $4, $5, $6, $7, $8, $9);`;
+  pool.query(queryString, [firstName, lastName, email, phoneNumber, dob, address, occupation, typeOfHome, interestedIn])
   .then(response => {
     console.log('response', response);
     res.sendStatus(200);
