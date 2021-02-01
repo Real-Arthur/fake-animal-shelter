@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
-import { Container, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import ContactSheetItems from './ContactSheetItems';
 
 function ContactSheet(props) {
@@ -12,14 +12,18 @@ function ContactSheet(props) {
   }, [])
 
   return (
-    <Container>
+    <Grid container direction="row">
         {props.store.contactsReducer.map((contact, i) =>
-        <ContactSheetItems
-        key={i}
-        contact={contact}
-        />
+          <Grid key={i} item xs={12} sm={12} md={6} lg={4}>
+            <Grid container direction="row" justify="space-around" alignItems="center">
+            <ContactSheetItems
+              key={i}
+              contact={contact}
+            />
+            </Grid>
+            </Grid>
         )}
-    </Container>
+    </Grid>
   );
 }
 
