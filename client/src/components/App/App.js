@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 // Local imports
 import './App.css';
@@ -19,10 +19,6 @@ class App extends Component {
     return (
       <Router>
           <Banner />
-        <Redirect 
-          from='/' 
-          to='/home' 
-        />
         <Switch>
           <Route 
             path='/home' 
