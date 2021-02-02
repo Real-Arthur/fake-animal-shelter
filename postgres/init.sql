@@ -75,8 +75,6 @@ VALUES
 INSERT INTO "animals" ("name", "animal_type", "breed", "color", "coat_length", "age", "sex", "size", "house_trained", "vaccinated", "neutered", "personality", "price", "picture")
 VALUES
 ('Paul', 'Rabbit', 'Rabbit', 'Brown with white parts', 'Short hair', 'Six Months', 'Male', 'Medium', TRUE, FALSE, TRUE, 'Chill', 2000, 'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555922464/shape/mentalfloss/istock_000011513454_small.jpg');
-
-
 INSERT INTO "animals" ("name", "animal_type", "breed", "color", "coat_length", "age", "sex", "size", "house_trained", "vaccinated", "neutered", "personality", "price", "picture")
 VALUES
 ('Tony', 'Snake', 'Pug', 'Brown with white parts', 'Short hair', 'Six Months', 'Male', 'Large', TRUE, TRUE, TRUE, 'Chill', 500, 'https://cms.qz.com/wp-content/uploads/2019/02/RTXLA3F-e1551362816993.jpg?quality=75&strip=all&w=1600&h=900&crop=1');
