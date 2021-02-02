@@ -12,12 +12,12 @@ CREATE TYPE sex AS ENUM ('Male', 'Female', 'Unknown');
 CREATE TABLE "user" (
   "id" SERIAL PRIMARY KEY,
   "username" VARCHAR,
-  "password" VARCHAR
+  "password" VARCHAR,
+	"admin_level" admin_level DEFAULT 'Staff'
 );
 -- We can create our post table
 CREATE TABLE "animals" (
   "id" SERIAL PRIMARY KEY,
-  "image" VARCHAR,
   "name" VARCHAR NOT NULL,
 	"animal_type" animal_type NOT NULL,
 	"breed" VARCHAR,
