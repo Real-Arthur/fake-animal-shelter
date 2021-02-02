@@ -6,7 +6,7 @@ import { Container, Typography } from '@material-ui/core';
 
 function StaffHome() {
   return (
-    <Container>
+    <Container style={{maxWidth: '100%'}}>
       <Typography 
         variant='h4' 
         style={{textDecoration: 'underline'}}

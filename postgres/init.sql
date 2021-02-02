@@ -22,7 +22,7 @@ CREATE TABLE "animals" (
 	"animal_type" animal_type NOT NULL,
 	"breed" VARCHAR,
 	"color" VARCHAR,
-	"coat_length" hair_length,
+	"coat_length" VARCHAR,
 	"age" VARCHAR,
 	"sex" sex,
 	"size" size,
@@ -49,6 +49,7 @@ CREATE TABLE "people" (
 	"contacted" BOOLEAN DEFAULT false,
 	"adoption_success" BOOLEAN DEFAULT false
 );
+--- Fake animal data
 INSERT INTO "animals" ("name", "animal_type", "breed", "color", "coat_length", "age", "sex", "size", "house_trained", "vaccinated", "neutered", "personality", "price", "picture")
 VALUES
 ('Jimmy', 'Dog', 'Australian Terrier', 'Brown', 'Long hair', 'Four Months', 'Male', 'Small', FALSE, TRUE, FALSE, 'Spirited, Alert, Loyal, Companionable, Even Tempered, Courageous', 2000, 'https://cdn2.thedogapi.com/images/r1Ylge5Vm_1280.jpg');
@@ -241,3 +242,38 @@ VALUES
 INSERT INTO "animals" ("name", "animal_type", "breed", "color", "coat_length", "age", "sex", "size", "house_trained", "vaccinated", "neutered", "personality", "price", "picture")
 VALUES
 ('Tony', 'Cat', 'Siberian', 'Dust brown with black accentws', 'Long hair', 'Four Months', 'Female', 'Small', TRUE, TRUE, TRUE, 'Curious, Intelligent, Loyal, Sweet, Agile, Playful, Affectionate', 500, 'https://cms.qz.com/wp-content/uploads/2019/02/RTXLA3F-e1551362816993.jpg?quality=75&strip=all&w=1600&h=900&crop=1');
+--- Fake interested people
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('James', 'Richardson', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 1, '2020-01-28');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Sara', 'Samuels', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 2, '2020-02-01');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Evelyn', 'Wellington', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 3, '2020-02-02');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Paul', 'Larson', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 4, '2020-01-20');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Chase', 'Crawford', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 1, '2020-01-08');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Singh', 'Patel', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 5, '2020-01-11');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Xiu', 'La', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 6, '2020-02-01');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Oly', 'Mann', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 2, '2020-02-02');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Mark', 'Jackson', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 3, '2020-02-01');
+INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
+VALUES
+('Ursula', 'Peters', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 4, '2020-02-01');
+-- Fake User
+INSERT INTO "user" ("username", "password")
+VALUES
+('fake1', 'password');
