@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { Grid } from '@material-ui/core';
 import ContactSheetItems from './ContactSheetItems';
-
+// holds and organizes contact sheets items
+// fetches contact list from sagas on load
 function ContactSheet(props) {
   useEffect(() => {
     props.dispatch({
       type: 'FETCH_CONTACTS'
     })
-  }, [])
+  }, []);
   return (
     <Grid 
       container 

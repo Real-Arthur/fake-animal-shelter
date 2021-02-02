@@ -4,7 +4,8 @@ import { withRouter } from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
-// Green button
+import swal from 'sweetalert';
+// Green button styles
 const ColorButton2 = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(green[400]),
@@ -15,7 +16,37 @@ const ColorButton2 = withStyles((theme) => ({
   },
 }))(Button);
 // Displays a person who has not been contacted
+// Allows staff to udpate status of person
 function ContactSheetItems(props) {
+  const confirmContact = () => {
+    swal({
+      title: `Did you contact ${props.contact.first_name} about ${props.contact.name}?`,
+      buttons: {
+        edit: {
+          text: 'Not yet',
+          value: 'no',
+          className: 'edit-button'
+        },
+        submit: {
+          text: 'Submit',
+          value: 'submit',
+          className: 'submit-button'
+        }
+      }
+    })
+    .then((value) => {
+      if(value === 'submit') {
+        swal({
+          title: 'Information Submitted',
+          text: 'Keep up the good work!',
+          icon: 'success'
+        }).then(() => {
+          markAsContacted()
+        })
+      }
+    })
+  }
+  // marks that a person has been contacted
   const markAsContacted = () => {
     props.dispatch({
       type: 'SET_CONTACTED',
@@ -75,7 +106,7 @@ function ContactSheetItems(props) {
         <ColorButton2 
           variant='outlined' 
           color='primary' 
-          onClick={markAsContacted}
+          onClick={confirmContact}
         >
           Mark As Contacted
         </ColorButton2>

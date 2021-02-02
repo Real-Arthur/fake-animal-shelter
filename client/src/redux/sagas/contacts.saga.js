@@ -11,15 +11,16 @@ function* searchContacts() {
     payload: response.data
   })
 }
+// updates person's contacted status
+// to true
 function* setAsContacted(action) {
-  let response = yield axios({
+  yield axios({
     method: 'PUT',
     url: `/api/contacts`,
     data: {
       id: action.payload.id
     }
   })
-  console.log('response by contacts router', response);
   yield put({
     type: `FETCH_CONTACTS`
   })
@@ -33,10 +34,10 @@ function* setInterested(action) {
   })
 }
 
-function* animalsSaga() {
+function* contactsSaga() {
     yield takeLatest('FETCH_CONTACTS', searchContacts);
     yield takeLatest('SET_CONTACTED', setAsContacted);
     yield takeLatest('CREATE_INTERESTED', setInterested);
   }
 
-  export default animalsSaga;
+  export default contactsSaga;
