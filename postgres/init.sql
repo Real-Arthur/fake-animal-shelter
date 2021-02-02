@@ -273,7 +273,3 @@ VALUES
 INSERT INTO "people" ("first_name", "last_name", "email", "phone_number", "date_of_birth", "address", "occupation", "type_of_home", "interested_in", "interested_on")
 VALUES
 ('Ursula', 'Peters', 'a@gmail.com', '4144003449', '11-19-1988', '123 Fake Street, Fakesville, Fake', 'Surfer', 'House', 4, '2020-02-01');
--- Fake User
-INSERT INTO "user" ("username", "password")
-VALUES
-('fake1', 'password');
