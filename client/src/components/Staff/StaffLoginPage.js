@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Container } from '@material-ui/core';
 import LoginForm from './LoginForm';
-import LogOutButton from '../Banner/NavBar/LogOutButton';
 import RegisterForm from './RegisterForm';
 
 function StaffHomePage(props) {
@@ -18,7 +17,6 @@ function StaffHomePage(props) {
       <Typography variant='h4'>{heading}</Typography>
       <LoginForm />
       <RegisterForm />
-      <LogOutButton />
     </Container>
   );
 }

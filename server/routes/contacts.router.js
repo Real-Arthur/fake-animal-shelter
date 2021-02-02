@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 // gets everyone who hasn't been contacted yet
+// oldest first
 router.get('/', (req, res) => {
   console.log('contacts get');
   const queryString = 
@@ -9,21 +10,21 @@ router.get('/', (req, res) => {
       "people"."id",
       "people"."first_name", 
       "people"."last_name", 
-      "people"."email", 
-      "people"."adoption_success", 
-      "people"."contacted", 
-      "animals"."name", 
-      "animals"."animal_type", 
-      "animals"."breed", 
+      "people"."email",
+      "people"."phone_number",
+      to_char("people"."interested_on", 'MONTHDD, YYYY') AS "interested_on",
+      "animals"."name",
+      "animals"."animal_type",
+      "animals"."breed",
       "animals"."price",
       "animals"."picture" 
     FROM "people"
     JOIN "animals"
       ON "people"."interested_in" = "animals"."id"
-    WHERE "people"."contacted" = false;`;
+    WHERE "people"."contacted" = false
+    ORDER BY "interested_on" ASC;`;
   pool.query(queryString)
     .then(response => {
-      console.log('response', response);
       res.send(response.rows);
     })
     .catch(error => {
@@ -41,7 +42,6 @@ router.put('/', (req, res) => {
   `;
   pool.query(queryString, [contactToUpdate])
   .then(response => {
-    console.log('response', response);
     res.sendStatus(200);
   })
   .catch(error => {
