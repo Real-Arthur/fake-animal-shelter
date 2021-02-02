@@ -28,6 +28,7 @@ Revved works with a local animal shelter. They have been incredibly busy and whi
 #### Node/Express
 - Backend Server/Router
 - Authentication
+- Appointment scheduling
 #### PostgreSQL
 - ACID database
 #### Docker
