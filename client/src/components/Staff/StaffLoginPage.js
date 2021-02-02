@@ -7,14 +7,16 @@ import { Container } from '@material-ui/core';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 
-function StaffHomePage(props) {
-  console.log('props', props);
-  
+function StaffHomePage() {
   const [heading, setHeading] = useState('Employee Portal');
-
   return (
-    <Container maxWidth='xs' style={{marginTop: '2em'}}>
-      <Typography variant='h4'>{heading}</Typography>
+    <Container 
+      maxWidth='xs' 
+      style={{marginTop: '2em'}}
+    >
+      <Typography variant='h4'>
+        {heading}
+      </Typography>
       <LoginForm />
       <RegisterForm />
     </Container>

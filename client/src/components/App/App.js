@@ -19,17 +19,48 @@ class App extends Component {
     return (
       <Router>
           <Banner />
-        <Redirect from='/' to='/home' />
+        <Redirect 
+          from='/' 
+          to='/home' 
+        />
         <Switch>
-          <Route path='/home' exact component={Adopt} />
-          <Route path='/volunteer' exact component={Volunteer} />
-          <Route path='/donate' exact component={Donate} />
-          <Route path='/about' exact component={About} />
-          <Route path='/register' exact component={Register} />
+          <Route 
+            path='/home' 
+            exact 
+            component={Adopt} 
+          />
+          <Route 
+            path='/volunteer'
+            exact 
+            component={Volunteer} 
+          />
+          <Route 
+            path='/donate' 
+            exact 
+            component={Donate} 
+          />
+          <Route 
+            path='/about' 
+            exact 
+            component={About} 
+          />
+          <Route 
+            path='/register' 
+            exact 
+            component={Register} 
+          />
         </Switch>
         <Switch>
-          <Route path='/staff' exact component={StaffLoginPage} />
-          <ProtectedRoute exact path='/staff/home' component={StaffHome} />
+          <Route 
+            path='/staff' 
+            exact 
+            component={StaffLoginPage}
+          />
+          <ProtectedRoute 
+            exact 
+            path='/staff/home' 
+            component={StaffHome} 
+          />
         </Switch>
       </Router>
     )

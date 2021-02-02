@@ -10,9 +10,13 @@ function LogOutButton(props) {
     })
     props.history.push('/staff')
   }
-    return (
-      <Button onClick={() => doBoth()}>Log Out</Button>
-    )
+  return (
+    <Button 
+      onClick={() => doBoth()}
+    >
+      Log Out
+    </Button>
+  )
 };
 
 export default connect()(withRouter((LogOutButton)));

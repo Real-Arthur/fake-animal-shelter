@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import { green, cyan } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 // Green button
 const ColorButton2 = withStyles((theme) => ({
   root: {
@@ -25,8 +25,13 @@ function ContactSheetItems(props) {
     })
   }
   return (
-    <Grid container direction='column' alignItems='flex-start' className='slightpadding'>
-      <Grid item >
+    <Grid 
+      container 
+      direction='column' 
+      alignItems='flex-start' 
+      className='slightpadding'
+    >
+      <Grid item>
         <Typography variant='h5'>
           Contact Info:
         </Typography>
@@ -60,10 +65,18 @@ function ContactSheetItems(props) {
         <Typography variant='h5'>
           {props.contact.interested_on}
         </Typography>
-          <img src={props.contact.picture} alt={props.contact.name} style={{height: '8em', width: '8em', marginTop: '1em', marginBottom: '1em'}}/>
+          <img 
+            src={props.contact.picture} 
+            alt={props.contact.name} 
+            style={{height: '8em', width: '8em', marginTop: '1em', marginBottom: '1em'}}
+          />
       </Grid>
       <Grid>
-        <ColorButton2 variant='outlined' color='primary' onClick={markAsContacted}>
+        <ColorButton2 
+          variant='outlined' 
+          color='primary' 
+          onClick={markAsContacted}
+        >
           Mark As Contacted
         </ColorButton2>
       </Grid>

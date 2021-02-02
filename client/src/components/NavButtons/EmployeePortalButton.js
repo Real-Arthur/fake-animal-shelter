@@ -8,7 +8,11 @@ function EmployeePortalButton(props) {
     props.history.push('/staff')
   }
   return (
-    <Button onClick={() => sendToEmployeePage()}>Employee Portal</Button>
+    <Button 
+      onClick={() => sendToEmployeePage()}
+    >
+      Employee Portal
+    </Button>
   )
 }
 

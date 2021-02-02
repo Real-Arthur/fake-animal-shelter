@@ -16,9 +16,18 @@ import './Banner.css';
 function Banner(props) {
   return (
     <Box>
-      <Grid container direction='column' alignItems='center'>
+      <Grid 
+        container 
+        direction='column'
+        alignItems='center'
+      >
         {props.location.pathname === '/home' &&
-        <Grid container direction='row' justify='space-between' className='staffBanner'>
+        <Grid 
+          container 
+          direction='row' 
+          justify='space-between' 
+          className='staffBanner'
+        >
           <Grid item>
             <DonateButton />
             <VolunteerButton />
@@ -27,10 +36,15 @@ function Banner(props) {
             <AboutButton />
             <EmployeePortalButton />
           </Grid>
-          </Grid>
+        </Grid>
           }
         {props.location.pathname === '/donate' &&
-          <Grid container direction='row' justify='space-between' className='staffBanner'>
+          <Grid 
+            container 
+            direction='row' 
+            justify='space-between' 
+            className='staffBanner'
+          >
             <Grid item>
               <AdoptButton />
               <VolunteerButton />
@@ -40,10 +54,14 @@ function Banner(props) {
               <EmployeePortalButton />
             </Grid>
           </Grid>
-
         }
         {props.location.pathname === '/volunteer' &&
-          <Grid container direction='row' justify='space-between' className='staffBanner'>
+          <Grid 
+            container 
+            direction='row' 
+            justify='space-between' 
+            className='staffBanner'
+          >
             <Grid item>
               <AdoptButton />
               <DonateButton />
@@ -52,10 +70,15 @@ function Banner(props) {
               <AboutButton />
               <EmployeePortalButton />
             </Grid>  
-        </Grid>   
+          </Grid>   
         }
         {props.location.pathname === '/about' &&
-          <Grid container direction='row' justify='space-between' className='staffBanner'>
+          <Grid 
+            container 
+            direction='row' 
+            justify='space-between' 
+            className='staffBanner'
+          >
             <Grid item>
               <AdoptButton />
               <DonateButton />
@@ -64,10 +87,15 @@ function Banner(props) {
             <Grid item>
               <EmployeePortalButton />
             </Grid>  
-        </Grid>   
+          </Grid>   
         }
         {props.location.pathname === '/register' &&
-          <Grid container direction='row' justify='space-between' className='staffBanner'>
+          <Grid 
+            container 
+            direction='row' 
+            justify='space-between' 
+            className='staffBanner'
+          >
             <Grid item>
               <AdoptButton />
               <DonateButton />
@@ -80,18 +108,26 @@ function Banner(props) {
           </Grid>  
         }
         {props.location.pathname === '/staff' &&
-        <Grid item className='banner'>
+          <Grid 
+            item 
+            className='banner'
+          >
             <AdoptButton />
             <DonateButton />
             <VolunteerButton />
-            </Grid>
+          </Grid>
         }
         {props.location.pathname === '/staff/home' &&
-        <Grid container direction='row' justify='space-between' className='staffBanner'>
-          <Grid item >
-            <AdoptButton />
-            <DonateButton />
-            <VolunteerButton />
+          <Grid 
+            container 
+            direction='row' 
+            justify='space-between' 
+            className='staffBanner'
+          >
+            <Grid item >
+              <AdoptButton />
+              <DonateButton />
+              <VolunteerButton />
             </Grid>
             <Grid item >
               <LogOutButton />

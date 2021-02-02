@@ -8,7 +8,11 @@ function AboutButton(props) {
     props.history.push('/about')
   }
   return (
-    <Button onClick={() => sendToAboutPage()}>About</Button>
+    <Button 
+      onClick={() => sendToAboutPage()}
+    >
+      About
+    </Button>
   )
 }
 
