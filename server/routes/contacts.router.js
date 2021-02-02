@@ -48,7 +48,6 @@ router.put('/', (req, res) => {
   });
 });
 router.post('/', (req, res) => {
-  console.log('req', req.body);
   let firstName = req.body.firstName;
   let lastName = req.body.lastName;
   let email = req.body.email;
@@ -74,7 +73,7 @@ router.post('/', (req, res) => {
     ($1, $2, $3, $4, $5, $6, $7, $8, $9, current_date);`;
   pool.query(queryString, [firstName, lastName, email, phoneNumber, dob, address, occupation, typeOfHome, interestedIn])
   .then(response => {
-    res.send(200);
+    res.sendStatus(200);
   })
   .catch(error => {
     console.log('error in interested.router.js POST', error);
