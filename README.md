@@ -39,3 +39,7 @@ Revved works with a local animal shelter. They have been incredibly busy and whi
 - ECS for docker container
 - ECR for managed docker container deployment
 - SES for emails
+
+## To run
+Clone
+Run docker-compose up
