@@ -4,7 +4,7 @@ services:
   backend:
     build:
       context: ./server
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.backend
     container_name: shelter-backend
     depends_on: 
       - postgres
@@ -17,7 +17,7 @@ services:
   frontend:
     build:
       context: ./client
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.client
     ports:
       - "3000:3000"
     container_name: shelter-frontend
@@ -28,7 +28,7 @@ services:
   postgres:
     build:
       context: ./postgres
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.postgres
     image: postgres
     container_name: shelter-postgres
     restart: always
