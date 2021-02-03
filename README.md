@@ -41,5 +41,5 @@ Revved works with a local animal shelter. They have been incredibly busy and whi
 - SES for emails
 
 ## To run
-Clone
-Run docker-compose up
+Run `git clone https://github.com/Real-Arthur/fake-animal-shelter.git`
+Run `docker-compose up`
